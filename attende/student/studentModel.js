@@ -9,6 +9,10 @@ const studentSchema = new Schema({
     type: String,
     required: true
   },
+  trainer_id: {
+    type: String,
+    required: true
+  },
   phone_number : {
     type: Number,
     required: true
@@ -19,11 +23,11 @@ const studentSchema = new Schema({
     unique: true
   },
   campus_id: {
-    type: Schema.Types.ObjectId,
+    type: String,
     required: true
   },
   batch_id : {
-    type: Schema.Types.ObjectId,
+    type: String,
     required: true
   },
   monthly_fee : {
@@ -34,7 +38,7 @@ const studentSchema = new Schema({
     type: String,
     required: true
   },
-  
+  attendences: [{  type: Boolean, ref: 'Attendance' }]
   
 });
 
